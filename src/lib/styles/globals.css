@@ -1,0 +1,17 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  padding: 4px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #333;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 4px 16px;
+  color: #fff;
+}
