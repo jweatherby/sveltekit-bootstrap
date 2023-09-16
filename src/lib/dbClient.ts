@@ -18,6 +18,10 @@ const prisma = new Prisma.PrismaClient({
     //     emit: 'stdout',
     //     level: 'warn',
     //   },
+    {
+      emit: 'event',
+      level: 'query'
+    }
   ],
 });
 

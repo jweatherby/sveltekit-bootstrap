@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: skboot-db
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: skbunboot-password
+    ports:
+      - 15432:5432
+    networks:
+      - skboot
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+  app:
+    container_name: skboot-app
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: "postgresql://postgres:skbunboot-password@postgres:5432/postgres?schema=public"
+    ports:
+      - 3001:3001
+    build: .
+    networks:
+      - skboot
+volumes:
+  pgdata: {}
+
+networks:
+  skboot:
+    driver: "bridge"

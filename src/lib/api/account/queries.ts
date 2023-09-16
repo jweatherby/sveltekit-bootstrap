@@ -22,6 +22,8 @@ export default {
       update: { emailedKey }
     })
 
+    console.log({ emailedKey })
+
     return { userId: user && user.id }
   })
 }
